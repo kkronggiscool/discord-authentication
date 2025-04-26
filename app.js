@@ -34,7 +34,7 @@ passport.deserializeUser((user, done) => {
 passport.use(new DiscordStrategy({
     clientID: process.env.clientId || "fuckshyt",
     clientSecret: process.env.clientSecret || "fuckshyt", // Replace with your Discord app's client secret
-    callbackURL: 'http://localhost:3000/auth/discord/callback', // Replace with your callback URL
+    callbackURL: 'https://discord-authentication.onrender.com/auth/discord/callback', // Replace with your callback URL
     scope: ['identify', 'email', 'guilds'] // 'guilds' scope is required to fetch guilds
 }, (accessToken, refreshToken, profile, done) => {
     // Filter guilds where the user is an admin or manager
